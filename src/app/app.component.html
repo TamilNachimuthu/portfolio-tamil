@@ -1,0 +1,596 @@
+<!-- NAV -->
+<header
+  class="fixed top-0 inset-x-0 z-50 transition-colors duration-300"
+  [class.bg-base-bg]="scrolled"
+>
+  <div class="max-w-7xl mx-auto flex items-center justify-between h-20">
+    <a
+      href="#top"
+      class="flex items-center gap-2 font-display font-semibold text-lg tracking-tight"
+    >
+      <span
+        class="w-8 h-8 rounded-md bg-base-panel grid place-items-center text-signal-mint font-mono text-sm"
+        >TN</span
+      >
+      <span class="hidden sm:inline"
+        >tamilselvan<span class="text-signal-mint">.</span>dev</span
+      >
+    </a>
+
+    <nav
+      class="hidden md:flex items-center gap-8 font-mono text-sm tracking-wide uppercase text-[#9dbfc8]"
+    >
+      <a
+        href="#home"
+        class="nav-link hover:text-ink transition-colors"
+        [class.is-active]="activeSection === 'home'"
+        >Home</a
+      >
+      <a
+        href="#about"
+        class="nav-link hover:text-ink transition-colors"
+        [class.is-active]="activeSection === 'about'"
+        >about</a
+      >
+      <a
+        href="#skills"
+        class="nav-link hover:text-ink transition-colors"
+        [class.is-active]="activeSection === 'skills'"
+        >skills</a
+      >
+      <a
+        href="#experience"
+        class="nav-link hover:text-ink transition-colors"
+        [class.is-active]="activeSection === 'experience'"
+        >experience</a
+      >
+      <a
+        href="#projects"
+        class="nav-link hover:text-ink transition-colors"
+        [class.is-active]="activeSection === 'projects'"
+        >projects</a
+      >
+      <a
+        href="#contact"
+        class="nav-link hover:text-ink transition-colors"
+        [class.is-active]="activeSection === 'contact'"
+        >contact</a
+      >
+    </nav>
+
+    <div class="hidden md:flex items-center gap-3">
+      <span class="relative flex h-2 w-2">
+        <span
+          class="absolute inline-flex h-full w-full rounded-full bg-signal-mint animate-pulseDot"
+        ></span>
+        <span
+          class="relative inline-flex rounded-full h-2 w-2 bg-signal-mint"
+        ></span>
+      </span>
+      <span class="font-mono text-xs text-[#9dbfc8]">available for work</span>
+    </div>
+
+    <button
+      class="md:hidden w-9 h-9 grid place-items-center rounded-md border border-base-line text-ink"
+      (click)="toggleMenu()"
+      aria-label="Toggle menu"
+    >
+      <span class="font-mono text-sm">{{ menuOpen ? "✕" : "☰" }}</span>
+    </button>
+  </div>
+
+  <div
+    *ngIf="menuOpen"
+    class="md:hidden bg-base-panel border-t border-base-line px-6 py-4 flex flex-col gap-4 font-mono text-sm uppercase tracking-wide"
+  >
+    <a
+      href="#about"
+      (click)="closeMenu()"
+      class="text-[#9dbfc8] hover:text-ink"
+      [class.text-signal-mint]="activeSection === 'about'"
+      >about</a
+    >
+    <a
+      href="#skills"
+      (click)="closeMenu()"
+      class="text-[#9dbfc8] hover:text-ink"
+      [class.text-signal-mint]="activeSection === 'skills'"
+      >skills</a
+    >
+    <a
+      href="#experience"
+      (click)="closeMenu()"
+      class="text-[#9dbfc8] hover:text-ink"
+      [class.text-signal-mint]="activeSection === 'experience'"
+      >experience</a
+    >
+    <a
+      href="#projects"
+      (click)="closeMenu()"
+      class="text-[#9dbfc8] hover:text-ink"
+      [class.text-signal-mint]="activeSection === 'projects'"
+      >projects</a
+    >
+    <a
+      href="#contact"
+      (click)="closeMenu()"
+      class="text-[#9dbfc8] hover:text-ink"
+      [class.text-signal-mint]="activeSection === 'contact'"
+      >contact</a
+    >
+  </div>
+</header>
+
+<main id="top" class="bg-[#180a4270]">
+  <!-- HERO -->
+  <div
+    class="bg-[linear-gradient(120deg,#3a0a67_0%,#030b2b_35%,#062b9c6e_65%,#4c00ff5e_85%,#a000ff59_100%)] p-4"
+  >
+    <section
+      id="home"
+      class="relative w-full min-h-screen h-screen overflow-hidden flex items-center"
+    >
+      <div
+        class="max-w-7xl mx-auto grid lg:grid-cols-[0.9fr_1.1fr] gap-5 items-start"
+      >
+        <div>
+          <p class="js-hero-boot font-mono text-xs text-signal-mint mb-5">
+            &gt; session --init tamilselvan_nachimuthu<span
+              class="animate-blink"
+              >_</span
+            >
+          </p>
+          <h1
+            class="js-hero-name font-display font-semibold text-4xl sm:text-5xl md:text-6xl leading-[1.05] tracking-tight"
+          >
+            Tamilselvan N
+          </h1>
+          <p
+            class="js-hero-role mt-5 font-mono text-signal-mint text-base sm:text-lg h-7"
+          >
+            {{ typedRole }}<span class="animate-blink">|</span>
+          </p>
+          <p
+            class="js-hero-copy mt-6 text-[#9dbfc8] text-base sm:text-lg leading-relaxed max-w-xl text-justify"
+          >
+            Building enterprise-grade web applications with a strong focus on
+            performance, scalability, and exceptional user experiences. With 5+
+            years of experience, I specialize in Angular, React.js, Next.js,
+            TypeScript, and JavaScript, transforming complex business
+            requirements into secure, scalable, and intuitive digital products
+            while applying modern frontend architecture, performance
+            optimization, and SEO best practices.
+          </p>
+          <div class="js-hero-cta mt-9 flex flex-wrap items-center gap-4">
+            <a
+              href="#projects"
+              class="group px-5 py-3 rounded-md bg-signal-mint text-base-bg font-medium text-sm hover:brightness-110 transition inline-flex items-center gap-2"
+            >
+              View work
+              <svg
+                class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a
+              href="#contact"
+              class="group px-5 py-3 rounded-md border border-base-line text-ink text-sm hover:border-signal-mint hover:text-signal-mint transition inline-flex items-center gap-2"
+            >
+              Get in touch
+              <svg
+                class="w-4 h-4 transition-transform duration-300 group-hover:rotate-45"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Live metrics panel (signature element) -->
+        <!-- <div class=" p-5 sm:p-6 w-full !bg-transparent"> -->
+        <div class="w-full h-full">
+          <img
+            src="assets/hero-section.png"
+            alt="Tamilselvan Portfolio Banner"
+            class="hero-banner"
+          />
+        </div>
+      </div>
+      <!-- </div> -->
+
+      <a
+        href="#about"
+        aria-label="Scroll to about section"
+        class="hidden sm:flex flex-col items-center gap-1.5 absolute left-1/2 -translate-x-1/2 bottom-6 text-ink-faint hover:text-signal-mint transition-colors"
+      >
+        <span class="font-mono text-[10px] uppercase tracking-widest"
+          >scroll</span
+        >
+        <svg
+          class="w-4 h-4 animate-bounceY"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </a>
+    </section>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about" class="px-6 py-20 md:py-28">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-[220px_1fr] gap-10">
+      <div appReveal>
+        <span class="eyebrow">about</span>
+        <h2 class="font-display text-2xl font-semibold mt-3">
+          Career Overview
+        </h2>
+      </div>
+      <div appReveal [appRevealDelay]="100" class="max-w-2xl">
+        <p class="text-lg sm:text-base leading-relaxed text-[#9dbfc8] text-justify">
+          I’m a Senior Software Engineer with 5+ years of experience building
+          modern, scalable web applications focused on performance, usability,
+          and exceptional user experiences. I’ve contributed to enterprise
+          solutions across fintech, property management, HRMS, e-commerce,
+          restaurant, and SaaS platforms, developing responsive interfaces,
+          secure role-based portals, and seamless REST API integrations.
+        </p>
+        <br />
+        <p class="text-lg sm:text-base leading-relaxed text-[#9dbfc8] text-justify">
+          My expertise includes transforming Figma designs into pixel-perfect,
+          accessible, and reusable UI components using Angular, React.js,
+          Next.js, TypeScript, and JavaScript. I build interactive dashboards
+          with Chart.js and ApexCharts, optimize application performance,
+          implement SEO best practices, and develop maintainable frontend
+          architectures for complex business workflows.
+        </p>
+        <br />
+        <p class="text-lg sm:text-base leading-relaxed text-[#9dbfc8] text-justify">
+          I thrive in Agile environments, collaborating closely with designers,
+          backend engineers, QA teams, and product stakeholders to deliver
+          reliable, scalable, and user-focused digital products. I’ve also been
+          recognized with Employee of the Month and Best Performer awards for
+          consistently delivering high-quality solutions, meeting critical
+          deadlines, and contributing to successful project outcomes.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section
+    id="skills"
+    class="px-6 py-20 md:py-28 border-t border-base-line bg-base-panel/30"
+  >
+    <div class="max-w-7xl mx-auto">
+      <div
+        appReveal
+        class="mb-12 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-5"
+      >
+        <div>
+          <span class="eyebrow">skills</span>
+          <h2 class="font-display text-2xl font-semibold mt-3">
+            Technical Skills &amp; Expertise
+          </h2>
+        </div>
+        <div class="relative w-full sm:w-64">
+          <svg
+            class="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-ink-faint"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <circle cx="11" cy="11" r="7"></circle>
+            <path d="m21 21-4.3-4.3"></path>
+          </svg>
+          <input
+            type="text"
+            name="skillFilter"
+            [(ngModel)]="skillFilter"
+            placeholder="Filter skills…"
+            class="w-full rounded-lg border border-base-line bg-base-panel py-2 pl-9 pr-3 text-sm text-ink placeholder:text-ink-faint focus:outline-none focus:border-signal-mint transition-colors"
+          />
+        </div>
+      </div>
+      <div
+        *ngIf="filteredSkills.length; else noSkillsFound"
+        class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4"
+      >
+        <div
+          *ngFor="let skill of filteredSkills; let i = index"
+          appReveal
+          [appRevealDelay]="i * 40"
+          class="group panel glow-card p-5 flex flex-col items-center justify-center text-center hover:border-signal-mint hover:-translate-y-1 transition-all duration-300"
+        >
+          <span
+            class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/95 mb-3"
+          >
+            <img
+              [src]="skillIcon(skill)"
+              [alt]="skill"
+              class="h-7 w-7 group-hover:scale-110 transition-transform"
+            />
+          </span>
+          <span class="text-sm text-ink">{{ skill }}</span>
+        </div>
+      </div>
+      <ng-template #noSkillsFound>
+        <p class="text-sm text-[#9dbfc8]">
+          No skills match "{{ skillFilter }}".
+        </p>
+      </ng-template>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section
+    id="experience"
+    class="px-6 py-20 md:py-28 border-t border-base-line"
+  >
+    <div class="max-w-7xl mx-auto">
+      <div appReveal class="mb-14">
+        <span class="eyebrow">experience</span>
+        <h2 class="font-display text-2xl font-semibold mt-3">
+          Work Experience
+        </h2>
+      </div>
+
+      <div class="relative pl-8 sm:pl-10">
+        <div
+          class="absolute left-[7px] sm:left-[11px] top-2 bottom-2 w-px bg-base-line"
+        ></div>
+
+        <div
+          *ngFor="let job of experience; let last = last"
+          appReveal
+          class="relative"
+          [class.mb-14]="!last"
+        >
+          <span
+            class="absolute -left-8 sm:-left-10 top-1.5 w-3.5 h-3.5 rounded-full bg-base-bg border-2 border-signal-mint"
+          ></span>
+
+          <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-2">
+            <h3 class="font-display text-xl font-semibold">{{ job.role }}</h3>
+            <span class="font-mono text-xs text-white">{{ job.duration }}</span>
+          </div>
+          <div
+            class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-4 font-mono text-xs text-[#9dbfc8]"
+          >
+            <span class="text-signal-mint">{{ job.company }}</span>
+            <span>·</span>
+            <span>{{ job.period }}</span>
+          </div>
+          <ul class="space-y-4 max-w-3xl">
+            <li
+              *ngFor="let point of job.points"
+              class="flex gap-3 text-[#9dbfc8] leading-relaxed"
+            >
+              <span class="text-signal-mint text-lg shrink-0">▸</span>
+              <span>{{ point }}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section
+    id="projects"
+    class="px-6 py-20 md:py-28 border-t border-base-line bg-base-panel/30"
+  >
+    <div class="max-w-7xl mx-auto">
+      <div appReveal class="mb-12">
+        <span class="eyebrow"> projects</span>
+        <h2 class="font-display text-2xl font-semibold mt-3">
+          Featured Projects
+        </h2>
+      </div>
+
+      <div class="relative mb-10">
+        <article
+          *ngFor="let project of projects; let i = index; let last = last"
+          #projectCard
+          class="proje-card panel glow-card p-6 sm:p-8 hover:bg-[#0a3542] transition-all hover:scale-105 duration-500 group"
+          [class.mb-6]="!last"
+          [style.zIndex]="i + 1"
+        >
+          <div class="flex items-start justify-between gap-4 mb-3">
+            <div>
+              <h3 class="font-display text-xl font-semibold mt-1">
+                {{ project.name }}
+              </h3>
+              <p class="text-base text-[#9dbfc8] mt-1">{{ project.tagline }}</p>
+            </div>
+          </div>
+          <ul class="space-y-2 mb-5">
+            <li
+              *ngFor="let point of project.points"
+              class="flex gap-2.5 text-sm text-[#9dbfc8] leading-relaxed items-start"
+            >
+              <span class="text-signal-mint shrink-0">▸</span>
+              <span>{{ point }}</span>
+            </li>
+          </ul>
+          <div class="flex flex-wrap gap-2">
+            <span
+              *ngFor="let tech of project.stack"
+              class="text-[12px] font-mono px-2 py-1 rounded border border-base-line text-[#9dbfc8] group-hover:bg-white group-hover:text-black transition-all duration-500 group-hover:scale-105"
+            >
+              {{ tech }}
+            </span>
+          </div>
+        </article>
+      </div>
+
+      <div appReveal class="panel glow-card p-6">
+        <span
+          class="font-mono text-[11px] uppercase tracking-widest text-signal-mint mb-4 block"
+          >other builds</span
+        >
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-4">
+          <div *ngFor="let op of otherProjects" class="flex gap-3">
+            <span class="text-signal-mint mt-1 shrink-0 text-xs">▸</span>
+            <div>
+              <span class="text-sm text-ink font-medium">{{ op.name }}</span>
+              <p class="text-xs text-[#9dbfc8] mt-0.5">{{ op.desc }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <div>
+    <section
+      id="contact"
+      class="px-6 py-20 md:py-28 border-t border-base-line bg-base-panel/30"
+    >
+      <div class="max-w-7xl mx-auto text-center">
+        <span class="eyebrow">contact</span>
+        <h2
+          appReveal
+          class="font-display text-3xl sm:text-4xl font-semibold mt-4 max-w-2xl mx-auto"
+        >
+          Let’s Build the Future Together.
+        </h2>
+        <p
+          appReveal
+          [appRevealDelay]="80"
+          class="text-[#9dbfc8] mt-4 max-w-lg mx-auto"
+        >
+          Open to
+          <span class="font-bold text-signal-mint"
+            >full-time Senior Software Engineer opportunities</span
+          >
+          focused on
+          <span class="font-bold text-signal-mint"
+            >React.js, Next.js, JavaScript and TypeScript</span
+          >
+          — building scalable & responsive web applications, real-time
+          dashboards, and AI-driven interfaces.
+        </p>
+        <div
+          appReveal
+          [appRevealDelay]="140"
+          class="mt-9 flex flex-wrap items-center justify-center gap-4"
+        >
+          <a
+            href="mailto:ntamilselvan9539@gmail.com"
+            class="px-6 py-3 rounded-md bg-signal-mint text-base-bg font-medium text-sm hover:brightness-110 transition"
+          >
+            ntamilselvan9539&#64;gmail.com
+          </a>
+          <a
+            href="tel:+916369006862"
+            class="px-6 py-3 rounded-md border border-base-line text-sm hover:border-signal-mint hover:text-signal-mint transition"
+          >
+            +91 63690 06862
+          </a>
+        </div>
+        <!-- <p class="font-mono text-xs text-ink-faint mt-6">
+          Chennai, Tamil Nadu, India
+        </p> -->
+      </div>
+    </section>
+  </div>
+  <!-- ACHIEVEMENTS -->
+  <section class="px-6 py-20 md:py-28 border-t border-base-line">
+    <div class="max-w-7xl mx-auto">
+      <div appReveal class="mb-12">
+        <span class="eyebrow"> Recognition</span>
+        <h2 class="font-display text-2xl font-semibold mt-3">
+          Achievements &amp; awards
+        </h2>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-6">
+        <div
+          *ngFor="let award of achievements; let i = index"
+          appReveal
+          [appRevealDelay]="i * 80"
+          class="panel glow-card p-6 group"
+        >
+          <div class="flex items-center gap-3">
+            <span
+              class="w-10 h-10 rounded-full bg-base-panel2 border border-base-line grid place-items-center text-signal-amber shrink-0 transition-transform duration-300 group-hover:scale-110"
+            >
+              <svg
+                class="w-5 h-5 animate-twinkle"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path d="M8 21l4-13 4 13-4-3-4 3z" />
+                <circle cx="12" cy="6" r="4" />
+              </svg>
+            </span>
+            <span
+              class="text-signal-amber text-xl animate-twinkle"
+              style="animation-delay: 400ms"
+              >★</span
+            >
+          </div>
+          <h3 class="font-display text-lg font-semibold mt-3">
+            {{ award.title }}
+          </h3>
+          <p class="font-mono text-xs text-[#9dbfc8] mt-1">{{ award.org }}</p>
+          <p class="text-sm text-[#9dbfc8] mt-3 leading-relaxed">
+            {{ award.desc }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<a
+  href="#top"
+  aria-label="Back to top"
+  class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-base-panel border border-base-line grid place-items-center text-signal-mint shadow-glow transition-all duration-300 hover:border-signal-mint hover:-translate-y-1"
+  [class.opacity-0]="!scrolled"
+  [class.pointer-events-none]="!scrolled"
+  [class.opacity-100]="scrolled"
+>
+  <svg
+    class="w-4 h-4 animate-float"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2.5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <line x1="12" y1="19" x2="12" y2="5"></line>
+    <polyline points="5 12 12 5 19 12"></polyline>
+  </svg>
+</a>
+
+<footer class="px-6 py-8 border-t border-base-line">
+  <div
+    class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 font-mono text-[11px] text-gray-400"
+  >
+    <span>&copy; {{ year }} Tamilselvan Nachimuthu. All rights reserved.</span>
+    <span>built with Angular · Tailwind · GSAP</span>
+  </div>
+</footer>

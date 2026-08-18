@@ -1,0 +1,19 @@
+:host {
+  display: block;
+}
+
+
+
+.js-hero-panel:hover .hero-banner {
+  transform: scale(1.02);
+}
+
+.hero-banner {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+  object-fit: contain;
+  /* transform: scale(1.5); */
+  transform-origin: center;
+}
